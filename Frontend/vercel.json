@@ -5,7 +5,7 @@
         "use": "@vercel/static-build",
         "config": {
           "distDir": "dist",
-          "buildCommand": "node -e \"try { require('fs').chmodSync('node_modules/.bin/vite', '755') } catch (e) { console.error(e) }\" && npm run build"
+          "buildCommand": "node setPermissions.js && npm run build"
         }
       }
     ],
