@@ -1,98 +1,103 @@
 @import "../../responsive.scss";
 
-nav{
+nav {
     display: flex;
     justify-content: space-between;
     height: 100px;
     align-items: center;
 
-    a{
+    a {
         transition: all 0.4s ease;
 
-        @include sm{
+        @include sm {
             display: none;
         }
 
-        &:hover{
+        &:hover {
             scale: 1.05;
         }
     }
 
-    .left{
+    .left {
         flex: 3;
         display: flex;
         align-items: center;
         gap: 50px;
     }
-    .logo{
+
+    .logo {
         font-weight: bold;
         font-size: 20px;
         display: flex;
-        gap:10px;
+        gap: 10px;
         align-items: center;
 
-        img{
+        img {
             width: 28px;
         }
-        span{
-            @include md{
+
+        span {
+            @include md {
                 display: none;
             }
-            @include sm{
+
+            @include sm {
                 display: initial;
             }
         }
     }
-    .right{
+
+    .right {
         flex: 2;
         display: flex;
-        align-items:center ;
+        align-items: center;
         justify-content: center;
         background-color: #fcf5f3;
         height: 100%;
         // width: 100%;
 
-        @include md{
+        @include md {
             background-color: transparent;
         }
 
-        
-            a{
-                // background-color: aqua;
-                padding: 5px 20px;
-                margin: 10px;
-                width: 95px;
-                height: 30px;
-                font-weight: bold;
-                cursor: pointer;
 
-                @include sm{
-                    display: none;
-                }
-            }
-            
-            .register{
-                background-color: #fece51;
-            }
-          
-        
+        // a {
+        //     // background-color: aqua;
+        //     padding: 5px 20px;
+        //     margin: 10px;
+        //     width: 95px;
+        //     height: 30px;
+        //     font-weight: bold;
+        //     cursor: pointer;
+
+        //     @include sm {
+        //         display: none;
+        //     }
+        // }
+
+        .register {
+            background-color: #fece51;
+        }
 
 
-        .menuIcon{
-            display:none;
+
+
+        .menuIcon {
+            display: none;
             z-index: 999;
-            img{
+
+            img {
                 width: 36px;
                 height: 36px;
                 cursor: pointer;
             }
 
-            @include sm{
-                display:initial
+            @include sm {
+                display: initial
             }
         }
 
-        .menu{
+        .menu {
             position: absolute;
             top: 0;
             right: -50%;
@@ -107,40 +112,44 @@ nav{
             justify-content: center;
             gap: 90px;
             font-size: 24px;
-            
-            &.active{
+
+            &.active {
                 right: 0;
             }
 
-            @include sm{
-                a{
+            @include sm {
+                a {
                     display: initial;
                 }
             }
         }
-        .user{
+
+        .user {
             display: flex;
             align-items: center;
             font-weight: bold;
-            img{
+
+            img {
                 width: 40px;
                 height: 40px;
                 border-radius: 50%;
                 object-fit: cover;
                 margin-right: 20px;
             }
-            span{
-                @include sm{
+
+            span {
+                @include sm {
                     display: none;
                 }
             }
-            .profile{
+
+            .profile {
                 background-color: #fece51;
                 cursor: pointer;
                 border: none;
                 position: relative;
 
-                .notification{
+                .notification {
                     position: absolute;
                     top: -8px;
                     right: -8px;
