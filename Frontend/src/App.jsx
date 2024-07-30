@@ -3,6 +3,7 @@ import ListPage from "./routes/listPage/listPage.jsx";
 import {Layout, RequireAuth} from "./routes/layout/layout.jsx";
 import SinglePage from "./routes/singlePage/singlePage.jsx";
 import ProfilePage from "./routes/profilePage/profilePage.jsx";
+import ProfileUpdatePage from "./routes/profileUpdatePage/profileUpdatePage.jsx";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -46,6 +47,10 @@ function App() {
           path:"/profile",
           element:<ProfilePage />
         },
+        {
+          path:"/profile/update",
+          element: <ProfileUpdatePage/>
+        }
       ]
     }
   ])
