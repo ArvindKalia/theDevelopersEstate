@@ -5,32 +5,32 @@ import apiRequest from "../../lib/apiRequest"
 import { useContext, useState } from "react"
 import { AuthContext } from "../../context/AuthContext"
 
-function Login(){
+function Login() {
     const { updateUser } = useContext(AuthContext)
     const [error, setError] = useState("")
     const [isLoading, setIsLoading] = useState(false)
-    const navigate= useNavigate()
-    const handleSubmit=async(e)=>{
+    const navigate = useNavigate()
+    const handleSubmit = async (e) => {
         setIsLoading(true)
         setError("")
         e.preventDefault()
-        const formData= new FormData(e.target)
-        const username=formData.get("username")
-        const password=formData.get("password")
+        const formData = new FormData(e.target)
+        const username = formData.get("username")
+        const password = formData.get("password")
 
-        try{
-            const res= await apiRequest.post("/auth/login",{
-                username,password
+        try {
+            const res = await apiRequest.post("/auth/login", {
+                username, password
             })
             updateUser(res.data)
             navigate("/")
-        }catch(err){
+        } catch (err) {
             setError(err.response.data.message)
-        } finally{
+        } finally {
             setIsLoading(false)
         }
     }
-    
+
     return (
         <div className="login">
             <div className="formContainer">

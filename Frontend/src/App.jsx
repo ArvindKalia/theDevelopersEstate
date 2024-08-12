@@ -10,6 +10,8 @@ import {
 } from "react-router-dom";
 import Register from "./routes/register/register.jsx";
 import Login from "./routes/login/login.jsx";
+import NewPostPage from "./routes/newPostPage/newPostPage.jsx";
+import { listLoader, profilePageLoader, singlePageLoader } from "./lib/loaders.js";
 
 function App() {
   const router=createBrowserRouter([
@@ -23,11 +25,13 @@ function App() {
         },
         {
           path:"/list",
-          element:<ListPage />
+          element:<ListPage />,
+          loader:listLoader
         },
         {
           path:"/:id",
-          element:<SinglePage />
+          element:<SinglePage />,
+          loader:singlePageLoader
         },
         {
           path:"/login",
@@ -45,11 +49,16 @@ function App() {
       children:[
         {
           path:"/profile",
-          element:<ProfilePage />
+          element:<ProfilePage />,
+          loader:profilePageLoader
         },
         {
           path:"/profile/update",
           element: <ProfileUpdatePage/>
+        },
+        {
+          path:"/add",
+          element: <NewPostPage/>
         }
       ]
     }
